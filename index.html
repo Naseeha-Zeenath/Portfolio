@@ -3,78 +3,92 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio Website</title>
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <title>Naseeha-Zeenath</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 </head>
 
-<body>
-    <header>
-        <div class="d-none d-lg-block">
-            <nav class="navbar bg-dark border-bottom  p-0" data-bs-theme="dark">
+<body class="h-screen bg-gradient-to-t from-sky-900 to-black ">
 
-                <div class="nav nav-tabs bg-dark border-0" id="nav-tab" role="tablist">
-                    <button class="nav-link active customizeNav" id="nav-home-tab" data-bs-toggle="tab"
-                        data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
-                        aria-selected="true">Home</button>
-                    <button class="nav-link customizeNav" id="nav-profile-tab" data-bs-toggle="tab"
-                        data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
-                        aria-selected="false">About</button>
-                    <button class="nav-link customizeNav" id="nav-contact-tab" data-bs-toggle="tab"
-                        data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
-                        aria-selected="false">Projects</button>
-                    <button class="nav-link customizeNav" id="nav-contact-tab" data-bs-toggle="tab"
-                        data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
-                        aria-selected="false">Contact</button>
+    <!-- Navbar -->
 
-            </nav>
-        </div>
+    <nav class="fixed top-0 left-0 z-50 w-full py-5 bg-black/30 backdrop-blur-md">
+        <div class="flex justify-center">
+            <ul class="flex items-center gap-12 text-lg font-medium text-white">
+                <li>
+                    <label onclick=""
+                        class="px-3 py-2 transition-all duration-300 rounded-lg hover:text-cyan-300 hover:underline">
+                        Home
+                    </label>
+                </li>
 
-        <div class="d-block d-lg-none">
+                <li>
+                    <a href="#"
+                        class="px-3 py-2 transition-all duration-300 rounded-lg hover:text-cyan-300 hover:underline">
+                        About
+                    </a>
+                </li>
 
-            <nav class="col-sm navbar bg-dark">
-                <div class="container-fluid customizeNav bg-dark">
-                    <a class="navbar-brand customizeNav bg-dark" href="#"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon bg-secondary"></span>
-                    </button>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                        aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                            <button type="button " class="btn-close bg-danger" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <nav class="nav flex-column bg-transparent">
-                                <a class="nav-link active customizeNav" aria-current="page" href="#">Home</a>
-                                <a class="nav-link customizeNav" href="#">About</a>
-                                <a class="nav-link customizeNav" href="#">Link</a>
-                                <a class="nav-link customizeNav" href="#">Contact</a>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+                <li>
+                    <a href="#"
+                        class="px-3 py-2 transition-all duration-300 rounded-lg hover:text-cyan-300 hover:underline">
+                        Skills
+                    </a>
+                </li>
 
+                <li>
+                    <a href="#"
+                        class="px-3 py-2 transition-all duration-300 rounded-lg hover:text-cyan-300 hover:underline">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                        class="px-3 py-2 transition-all duration-300 rounded-lg hover:text-cyan-300 hover:underline">
+                        Contact
+                    </a>
+                </li>
+            </ul>
 
         </div>
+    </nav>
 
 
 
-    </header>
+    <section class="flex flex-col items-center justify-center h-screen text-center text-white">
+
+        <h3 class="mb-4 text-4xl font-bold text-gray-300">
+            Welcome to My Portfolio
+        </h3>
+
+        <h1 class="text-6xl font-bold">
+            <span id="typing" class="text-cyan-400"></span>
+            <span class="animate-pulse text-cyan-400">|</span>
+        </h1>
+
+        <p class="max-w-2xl mt-8 text-2xl text-gray-300">
+            I'm a passionate web developer and designer, <br>
+            bringing ideas to life through code.
+        </p>
+
+    </section>
+
+    <div class="flex items-center justify-center h-screen">
+        <div id="card">
+            <img id="prflImg" src="image/prflImg.jpeg" class="shadow-lg w-60 rounded-3xl shadow-cyan-900">
+        </div>
+    </div>
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+
 </body>
 
 </html>

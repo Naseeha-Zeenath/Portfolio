@@ -47,9 +47,9 @@ window.addEventListener("scroll", () => {
 
     profile.style.transform = `
         perspective(1200px)
-        rotateY(${scroll * 0.5}deg)
+        rotateY(${scroll * 0.8}deg)
         rotateX(${scroll * 0.0}deg)
-        scale(1.05)
+        scale(1.1)
     `;
 
 });

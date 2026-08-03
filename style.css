@@ -9,3 +9,39 @@ body{
     
 }
 
+#prflImg{
+  box-shadow:2px  2px 50px 10px rgba(7, 125, 129, 0.575);
+  animation:cart-anim linear both ;
+  animation-duration: 5s;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+
+}
+
+
+@keyframes cart-anim {
+    0%{
+        transform: rotateY(0);
+        transform: scale(0.5);
+    }
+    
+    25%{
+        transform: rotateY(90deg);
+       
+    }
+    50%{
+        transform: rotateY(180deg);
+     
+    }
+    75%{
+        transform: rotateY(90deg);
+        
+    }
+    100%{
+        transform: rotateY(0);
+    }
+   
+}
+
+
+

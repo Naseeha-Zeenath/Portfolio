@@ -7,6 +7,27 @@
     <link rel="stylesheet" href="style.css">
     <title>Naseeha-Zeenath</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .cursor-blink {
+            animation: blink 1s infinite;
+        }
+    </style>
 
 </head>
 
@@ -17,54 +38,32 @@
     <nav class="fixed top-0 left-0 z-50 w-full py-5 bg-black/30 backdrop-blur-md">
         <div class="flex justify-center">
             <ul class="flex items-center gap-12 text-lg font-medium text-white">
-                <li>
-                    <label onclick=""
-                        class="px-3 py-2 transition-all duration-300 rounded-lg hover:text-cyan-300 hover:underline">
-                        Home
-                    </label>
+                <li><a href="#home"
+                        class="px-3 py-2 transition-all duration-300 rounded-lg hover:text-cyan-300 hover:underline">Home</a>
                 </li>
-
-                <li>
-                    <a href="#"
-                        class="px-3 py-2 transition-all duration-300 rounded-lg hover:text-cyan-300 hover:underline">
-                        About
-                    </a>
+                <li><a href="#about"
+                        class="px-3 py-2 transition-all duration-300 rounded-lg hover:text-cyan-300 hover:underline">About</a>
                 </li>
-
-                <li>
-                    <a href="#"
-                        class="px-3 py-2 transition-all duration-300 rounded-lg hover:text-cyan-300 hover:underline">
-                        Skills
-                    </a>
+                <li><a href="#skills"
+                        class="px-3 py-2 transition-all duration-300 rounded-lg hover:text-cyan-300 hover:underline">Skills</a>
                 </li>
-
-                <li>
-                    <a href="#"
-                        class="px-3 py-2 transition-all duration-300 rounded-lg hover:text-cyan-300 hover:underline">
-                        Projects
-                    </a>
+                <li><a href="#projects"
+                        class="px-3 py-2 transition-all duration-300 rounded-lg hover:text-cyan-300 hover:underline">Projects</a>
                 </li>
-
-                <li>
-                    <a href="#"
-                        class="px-3 py-2 transition-all duration-300 rounded-lg hover:text-cyan-300 hover:underline">
-                        Contact
-                    </a>
+                <li><a href="#contact"
+                        class="px-3 py-2 transition-all duration-300 rounded-lg hover:text-cyan-300 hover:underline">Contact</a>
                 </li>
             </ul>
-
         </div>
     </nav>
 
 
 
-    <section class="flex flex-col items-center justify-center h-screen text-center ">
+    <!-- <section id="home" class="flex flex-col items-center justify-center min-h-screen px-4 pt-20 text-center">
 
-        <h3 class="mb-4 text-4xl font-bold text-gray-300">
-            Welcome to My Portfolio
-        </h3>
+        <h3 class="mb-4 text-4xl font-bold text-gray-300">Welcome to My Portfolio</h3>
 
-        <h1 class="text-6xl text-s italic">
+        <h1 class="text-6xl italic text-s">
             <span id="typing" class=" text-sky-600 text-shadow-2xs text-shadow-sky-200"></span>
             <span class="animate-pulse text-cyan-600">|</span>
         </h1>
@@ -73,37 +72,113 @@
             I'm a passionate web developer and designer, <br>
             bringing ideas to life through code.
         </p>
+        <div class="mt-2">
+            <div class="max-w-2xl px-6 mx-auto lg:max-w-7xl lg:px-8 ">
 
+                <div class="grid lg:grid-cols-2 lg:grid-rows-2">
+                    <div class="relative lg:row-span-2 ">
+                        <p class="text-gray-200">I am a Software Engineering student with a strong interest in web
+                            development, programming, and problem-solving.
+                            <br>
+                            As a beginner, I am building my skills through personal projects and academic coursework.
+                            <br>
+                            I am eager to learn new technologies, collaborate with others, and develop software that
+                            solves
+                            real-world problems.
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="flex items-center justify-center">
+                            <div id="card">
+                                <img id="prflImg" src="image/prflImg.jpeg"
+                                    class="shadow-lg w-60 rounded-3xl shadow-cyan-900">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </section> -->
+
+
+    <!-- ===================== HOME ===================== -->
+    <section id="home" class="min-h-screen px-4 pb-20 pt-28">
+
+        <div class="max-w-6xl mx-auto">
+
+            <!-- Top welcome -->
+            <div class="mb-16 text-center">
+                <p class="mb-4 text-sm font-medium tracking-[0.2em] text-cyan-400 uppercase">Welcome to My Portfolio</p>
+
+                <h1 class="text-6xl italic text-s">
+                    <span id="typing" class=" text-sky-600 text-shadow-2xs text-shadow-sky-200"></span>
+                    <span class="animate-pulse text-cyan-600">|</span>
+                </h1>
+
+            </div>
+
+            <!-- Main frame: LEFT content + RIGHT image -->
+            <div class="p-4 m-2 border border-cyan-500/20 rounded-3xl bg-slate-900/50 "
+                style="box-shadow: 0 0 0 1px rgba(193, 211, 214, 0.2), 0 20px 50px -15px rgba(195, 226, 231, 0.3);">
+
+                <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+
+                    <!-- LEFT CONTENT -->
+                    <div class="order-2 p-3 space-y-6 lg:order-1">
+
+                        <div class="space-y-4 text-base leading-relaxed text-gray-300 md:text-lg">
+
+                            <p class="max-w-2xl mx-auto text-lg leading-relaxed text-gray-400 md:text-xl">
+                                Passionate Web Developer & Designer<br>
+                                Bringing ideas to life through clean code
+                            </p>
+                            <p>
+                                I am a <span class="font-medium text-cyan-300">Software Engineering student</span>
+                                with a strong interest in web development, programming, and problem-solving.
+                            </p>
+                            <p>
+                                As a beginner, I am building my skills through personal projects and academic
+                                coursework.
+                            </p>
+                            <p>
+                                I am eager to learn new technologies, collaborate with others, and develop software
+                                that solves real-world problems.
+                            </p>
+                        </div>
+
+                        <!-- Buttons - different style (underline + outline box) -->
+                        <div class="flex flex-wrap items-center gap-5 pt-2">
+                            <a href="https://github.com/Naseeha-Zeenath"
+                                class="relative px-1 py-1 font-semibold text-cyan-300 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full">
+                                GitHub →
+                            </a>
+                            <a href=""
+                                class="px-5 py-2.5 font-semibold text-white border border-white/20 rounded-md hover:border-cyan-400 hover:text-cyan-300 hover:bg-white/5 transition-all duration-300">
+                                Contact Me
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT IMAGE -->
+                    <div class="flex justify-center order-1 lg:order-2">
+                        <div id="card" class="relative">
+                            <!-- glow -->
+                            <img src="image/prflImg.jpeg" id="prflImg"
+                                class="relative object-cover shadow-2xl w-60 h-72 md:w-50 md:h-60 rounded-[1.7rem] ">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     </section>
 
 
-
-
-    <div class=" mt-2">
-        <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 ">
-
-            <div class=" grid lg:grid-cols-2 lg:grid-rows-2">
-                <div class="relative lg:row-span-2">
-                    <p class="text-gray-200">I am a Software Engineering student with a strong interest in web development, programming, and problem-solving. 
-                        <br>
-                        As a beginner, I am building my skills through personal projects and academic coursework. 
-                        <br>
-                        I am eager to learn new technologies, collaborate with others, and develop software that solves real-world problems.</p>
-                </div>
-
-                <div class="relative">
-                    <div class="flex items-center justify-center">
-                        <div id="card" >
-                            <img id="prflImg" src="image/prflImg.jpeg"
-                                class="shadow-lg w-60 rounded-3xl shadow-cyan-900">
-                        </div>
-                    </div>
-                </div>
-               
-            </div>
-        </div>
-    </div>
-    </div>
 
 
 

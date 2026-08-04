@@ -31,11 +31,11 @@
 
 </head>
 
-<body class="h-screen bg-gradient-to-t from-sky-900 to-black ">
+<body class="h-screen bg-gradient-to-t from-sky-900 to-black autoShow">
 
     <!-- Navbar -->
 
-    <nav class="fixed top-0 left-0 z-50 w-full py-5 bg-black/30 backdrop-blur-md">
+    <nav class="fixed top-0 left-0 z-50 w-full py-5 bg-black/30 backdrop-blur-md ">
         <div class="flex justify-center">
             <ul class="flex items-center gap-12 text-lg font-medium text-white">
                 <li><a href="#home"
@@ -58,55 +58,8 @@
     </nav>
 
 
-
-    <!-- <section id="home" class="flex flex-col items-center justify-center min-h-screen px-4 pt-20 text-center">
-
-        <h3 class="mb-4 text-4xl font-bold text-gray-300">Welcome to My Portfolio</h3>
-
-        <h1 class="text-6xl italic text-s">
-            <span id="typing" class=" text-sky-600 text-shadow-2xs text-shadow-sky-200"></span>
-            <span class="animate-pulse text-cyan-600">|</span>
-        </h1>
-
-        <p class="max-w-2xl mt-8 text-2xl text-gray-300">
-            I'm a passionate web developer and designer, <br>
-            bringing ideas to life through code.
-        </p>
-        <div class="mt-2">
-            <div class="max-w-2xl px-6 mx-auto lg:max-w-7xl lg:px-8 ">
-
-                <div class="grid lg:grid-cols-2 lg:grid-rows-2">
-                    <div class="relative lg:row-span-2 ">
-                        <p class="text-gray-200">I am a Software Engineering student with a strong interest in web
-                            development, programming, and problem-solving.
-                            <br>
-                            As a beginner, I am building my skills through personal projects and academic coursework.
-                            <br>
-                            I am eager to learn new technologies, collaborate with others, and develop software that
-                            solves
-                            real-world problems.
-                        </p>
-                    </div>
-
-                    <div class="relative">
-                        <div class="flex items-center justify-center">
-                            <div id="card">
-                                <img id="prflImg" src="image/prflImg.jpeg"
-                                    class="shadow-lg w-60 rounded-3xl shadow-cyan-900">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        </div>
-
-    </section> -->
-
-
     <!-- ===================== HOME ===================== -->
-    <section id="home" class="min-h-screen px-4 pt-40 pb-20">
+    <section id="home" class="min-h-screen px-4 pt-40 pb-20 ">
 
         <div class="max-w-6xl mx-auto">
 
@@ -118,16 +71,30 @@
                     <span id="typing" class=" text-sky-600 text-shadow-2xs text-shadow-sky-200"></span>
                     <span class="animate-pulse text-cyan-600">|</span>
                 </h1>
+                <br>
+                
 
             </div>
 
             <!-- Main frame: LEFT content + RIGHT image -->
-            <div class="flex justify-center w-full mt-30 ">
+            <div class="flex justify-center w-full ">
 
                 <div class="grid items-center max-w-5xl gap-10 lg:grid-cols-2">
 
                     <!-- LEFT CONTENT -->
-                    <div class="p-6 border border-cyan-500/20 rounded-3xl bg-slate-900/50"
+                      <div class="flex items-center justify-center m-7 md:justify-end">
+                        <div id="card" class="relative">
+
+                            <img src="image/prflImg.jpeg" id="prflImg" alt="Profile"
+                                class="relative object-cover border-4 rounded-full shadow-2xl w-50 h-50 md:w-50 md:h-50 border-cyan-800 ">
+                        </div>
+                    </div>
+                    
+                    
+
+                    <!-- RIGHT IMAGE -->
+                   
+                    <div class="p-6 border border-cyan-500/20 rounded-3xl bg-slate-900/50 " id="homeDetails"
                         style="box-shadow: 0 0 0 1px rgba(193, 211, 214, 0.2), 0 20px 50px -15px rgba(195, 226, 231, 0.3);">
 
                         <div class="space-y-4 text-base leading-relaxed text-gray-300 md:text-lg">
@@ -135,6 +102,9 @@
                             <p class="text-lg font-medium md:text-xl text-sky-200">
                                 Passionate Software Engineering Student
                             </p>
+
+                            <div class=" h-0.5 bg-gradient-to-r from-cyan-400 to-transparent"></div>
+
 
                             <p>
                                 A Software Engineering student passionate about turning ideas into innovative software
@@ -156,17 +126,13 @@
                         </div>
                     </div>
 
-                    <!-- RIGHT IMAGE -->
-                    <div class="flex items-center justify-center">
-                        <div id="card" class="relative">
-
-                            <img src="image/prflImg.jpeg" id="prflImg" alt="Profile"
-                                class="relative object-cover shadow-2xl w-60 h-72 md:w-64 md:h-65 rounded-[1.7rem]">
-                        </div>
-                    </div>
-
                 </div>
             </div>
+    </section>
+
+
+    <section>
+        
     </section>
 
 

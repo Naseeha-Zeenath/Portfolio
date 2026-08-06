@@ -39,42 +39,34 @@ typeEffect();
 
 
 
-// ========== HOME SECTION ANIMATION ==========
-const homeTitle   = document.querySelector(".home-title");
-const homeImage   = document.querySelector(".home-image");
-const homeContent = document.querySelector(".home-content");
+// ========== PROFILE IMAGE ==========
+const profileImg = document.getElementById("prflImg");
 
-const homeObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                // Title first
-                setTimeout(() => {
-                    if (homeTitle) homeTitle.classList.add("show");
-                }, 100);
+// 1. Entrance animation when page first loads
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        if (profileImg) {
+            profileImg.classList.add("loaded");
+        }
+    }, 100);
+});
 
-                // Image second
-                setTimeout(() => {
-                    if (homeImage) homeImage.classList.add("show");
-                }, 400);
+// 2. Continuous rotation while scrolling (up & down)
+window.addEventListener("scroll", () => {
+    if (!profileImg) return;
 
-                // Content last
-                setTimeout(() => {
-                    if (homeContent) homeContent.classList.add("show");
-                }, 700);
-            }
-        });
-    },
-    {
-        threshold: 0.2
-    }
-);
+    // Only start rotating after the entrance animation is done
+    if (!profileImg.classList.contains("loaded")) return;
 
-const homeSection = document.querySelector("#home");
-if (homeSection) {
-    homeObserver.observe(homeSection);
-}
+    const scrollY = window.scrollY;
+    const rotateY = scrollY * 0.45;   // change speed here
 
+    profileImg.style.transform = `
+        perspective(1000px)
+        rotateY(${rotateY}deg)
+        scale(1.05)
+    `;
+});
 
 // ========== DRAMATIC SCROLL REVEAL ==========
 const revealElements = document.querySelectorAll(

@@ -38,23 +38,42 @@ function typeEffect() {
 typeEffect();
 
 
-const profile = document.getElementById("prflImg");
 
+// ========== HOME SECTION ANIMATION ==========
+const homeTitle   = document.querySelector(".home-title");
+const homeImage   = document.querySelector(".home-image");
+const homeContent = document.querySelector(".home-content");
 
-window.addEventListener("scroll", () => {
+const homeObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // Title first
+                setTimeout(() => {
+                    if (homeTitle) homeTitle.classList.add("show");
+                }, 100);
 
-    const scroll = window.scrollY;
+                // Image second
+                setTimeout(() => {
+                    if (homeImage) homeImage.classList.add("show");
+                }, 400);
 
-    profile.style.transform = `
-        perspective(1200px)
-        rotateY(${scroll * 0.8}deg)
-        rotateX(${scroll * 0.0}deg)
-        scale(1.1)
-    `;
+                // Content last
+                setTimeout(() => {
+                    if (homeContent) homeContent.classList.add("show");
+                }, 700);
+            }
+        });
+    },
+    {
+        threshold: 0.2
+    }
+);
 
-});
-
-
+const homeSection = document.querySelector("#home");
+if (homeSection) {
+    homeObserver.observe(homeSection);
+}
 
 
 // ========== DRAMATIC SCROLL REVEAL ==========

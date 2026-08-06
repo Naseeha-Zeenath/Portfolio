@@ -55,3 +55,126 @@ window.addEventListener("scroll", () => {
 });
 
 
+
+
+// ========== DRAMATIC SCROLL REVEAL ==========
+const revealElements = document.querySelectorAll(
+  ".reveal, .reveal-stagger, .project-card-anim"
+);
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      } else {
+        entry.target.classList.remove("active"); // reverse on scroll up
+      }
+    });
+  },
+  {
+    threshold: 0.5,
+    rootMargin: "0px 0px -50px 0px",
+  }
+);
+
+revealElements.forEach((el) => observer.observe(el));
+
+
+// ========== COUNTERS ==========
+function animateCounter(el, target) {
+  let start = 0;
+  const duration = 1600;
+  const increment = target / (duration / 16);
+
+  const timer = setInterval(() => {
+    start += increment;
+    if (start >= target) {
+      el.textContent = target + (el.dataset.suffix || "");
+      clearInterval(timer);
+    } else {
+      el.textContent = Math.floor(start) + (el.dataset.suffix || "");
+    }
+  }, 16);
+}
+
+const counters = document.querySelectorAll(".counter");
+const counterObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !entry.target.classList.contains("counted")) {
+        entry.target.classList.add("counted");
+        animateCounter(entry.target, parseInt(entry.target.dataset.target));
+      }
+    });
+  },
+  { threshold: 0.6 }
+);
+
+counters.forEach((c) => counterObserver.observe(c));
+
+
+
+// ========== PROJECT CARDS - ONE BY ONE ROTATE ANIMATION ==========
+const projectCards = document.querySelectorAll(".project-card");
+
+const projectObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // Animate cards one by one
+                projectCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add("show");
+                    }, index * 180); // delay between each card
+                });
+            } else {
+                // Reverse animation when scrolling back up
+                projectCards.forEach((card) => {
+                    card.classList.remove("show");
+                });
+            }
+        });
+    },
+    {
+        threshold: 0.70,
+        rootMargin: "0px 0px -80px 0px"
+    }
+);
+
+const projectsSection = document.querySelector("#projects");
+if (projectsSection) {
+    projectObserver.observe(projectsSection);
+}
+
+
+
+// ========== CORE TECHNOLOGIES - One by One Animation ==========
+const techItems = document.querySelectorAll(".tech-item");
+
+const techObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                techItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add("show");
+                    }, index * 150); // 150ms delay between each span
+                });
+            } else {
+                techItems.forEach((item) => {
+                    item.classList.remove("show");
+                });
+            }
+        });
+    },
+    {
+        threshold: 0.5,
+        rootMargin: "0px 0px -40px 0px"
+    }
+);
+
+const techContainer = document.querySelector(".tech-container");
+if (techContainer) {
+    techObserver.observe(techContainer);
+}

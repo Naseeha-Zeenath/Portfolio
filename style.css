@@ -3,8 +3,6 @@ body {
     background-repeat: no-repeat;
 }
 
-
-
 #prflImg {
     box-shadow: 2px 2px 50px 10px rgba(7, 125, 129, 0.575);
     transform-style: preserve-3d;
@@ -23,174 +21,63 @@ html {
 }
 
 @keyframes blink {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 .cursor-blink {
     animation: blink 1s infinite;
 }
 
-
-/* ========== HOME SECTION ANIMATIONS ========== */
-
-.home-title {
-    opacity: 0;
-    transform: translateY(-50px);
-    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.home-title.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.home-image {
-    opacity: 0;
-    transform: scale(0.5) rotate(-20deg);
-    filter: blur(12px);
-    transition: all 1s cubic-bezier(0.34, 1.4, 0.64, 1);
-}
-
-.home-image.show {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-    filter: blur(0);
-}
-
-.home-content {
-    opacity: 0;
-    transform: translateX(80px);
-    filter: blur(10px);
-    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.home-content.show {
-    opacity: 1;
-    transform: translateX(0);
-    filter: blur(0);
-}
-
-
-
-
-
-/* Strong stagger for skills & projects */
-.reveal-stagger>* {
+/* ========== SCROLL REVEAL ========== */
+.reveal-stagger > * {
     opacity: 0;
     filter: blur(10px);
     transform: translateY(70px) scale(0.9);
     transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal-stagger.active>*:nth-child(1) {
-    transition-delay: 0.05s;
-}
+.reveal-stagger.active > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.active > *:nth-child(2) { transition-delay: 0.15s; }
+.reveal-stagger.active > *:nth-child(3) { transition-delay: 0.25s; }
+.reveal-stagger.active > *:nth-child(4) { transition-delay: 0.35s; }
+.reveal-stagger.active > *:nth-child(5) { transition-delay: 0.45s; }
+.reveal-stagger.active > *:nth-child(6) { transition-delay: 0.55s; }
+.reveal-stagger.active > *:nth-child(7) { transition-delay: 0.65s; }
 
-.reveal-stagger.active>*:nth-child(2) {
-    transition-delay: 0.15s;
-}
-
-.reveal-stagger.active>*:nth-child(3) {
-    transition-delay: 0.25s;
-}
-
-.reveal-stagger.active>*:nth-child(4) {
-    transition-delay: 0.35s;
-}
-
-.reveal-stagger.active>*:nth-child(5) {
-    transition-delay: 0.45s;
-}
-
-.reveal-stagger.active>*:nth-child(6) {
-    transition-delay: 0.55s;
-}
-
-.reveal-stagger.active>*:nth-child(7) {
-    transition-delay: 0.65s;
-}
-
-.reveal-stagger.active>* {
+.reveal-stagger.active > * {
     opacity: 1;
     filter: blur(0);
     transform: translateY(0) scale(1);
 }
 
-/* ========== PROJECT CARDS - One by One Rotate Entrance ========== */
-
+/* ========== PROJECT CARDS ========== */
 .project-card {
     opacity: 0;
-    transform: translateY(150px) scale(0.6) rotate(-25deg);
-    filter: blur(14px);
-    transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
-    will-change: transform, opacity, filter;
+    transform: translateY(40px) scale(0.95);
+    filter: blur(8px);
+    transition: all 0.6s cubic-bezier(0.34, 1.4, 0.64, 1);
 }
 
 .project-card.show {
     opacity: 1;
-    transform: translateY(0) scale(1) rotate(0deg);
+    transform: translateY(0) scale(1);
     filter: blur(0);
 }
 
-/* Different starting rotation for variety */
-.project-card[data-order="1"] {
-    transform: translateY(150px) scale(0.6) rotate(-30deg);
+@media (hover: hover) {
+    .project-card:hover {
+        transform: translateY(-6px);
+    }
 }
 
-.project-card[data-order="2"] {
-    transform: translateY(150px) scale(0.6) rotate(20deg);
+@media (max-width: 1023px) {
+    .project-card:hover {
+        transform: translateY(-4px) !important;
+    }
 }
 
-.project-card[data-order="3"] {
-    transform: translateY(150px) scale(0.6) rotate(-15deg);
-}
-
-.project-card[data-order="4"] {
-    transform: translateY(150px) scale(0.6) rotate(25deg);
-}
-
-.project-card[data-order="5"] {
-    transform: translateY(150px) scale(0.6) rotate(-20deg);
-}
-
-.project-card[data-order="6"] {
-    transform: translateY(150px) scale(0.6) rotate(15deg);
-}
-
-.project-card[data-order="7"] {
-    transform: translateY(150px) scale(0.6) rotate(-10deg);
-}
-
-.project-card[data-order="1"].show,
-.project-card[data-order="2"].show,
-.project-card[data-order="3"].show,
-.project-card[data-order="4"].show,
-.project-card[data-order="5"].show,
-.project-card[data-order="6"].show,
-.project-card[data-order="7"].show {
-    transform: translateY(0) scale(1) rotate(0deg);
-}
-
-/* Fix for the broken text in home card */
-#homeDetails p,
-#homeDetails .text-sky-200 {
-    letter-spacing: normal !important;
-    word-spacing: normal !important;
-    white-space: normal !important;
-}
-
-
-
-
-/* ========== CORE TECHNOLOGIES - One by One ========== */
+/* ========== CORE TECHNOLOGIES ========== */
 .tech-item {
     opacity: 0;
     transform: translateY(40px) scale(0.7);
@@ -202,4 +89,12 @@ html {
     opacity: 1;
     transform: translateY(0) scale(1);
     filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }

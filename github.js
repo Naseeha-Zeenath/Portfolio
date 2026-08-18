@@ -10,49 +10,49 @@ const projectsMap = {
         title: "Weather App",
         description: "Live weather using API",
         icon: "🌤️",
-        gradient: "from-sky-500/30 to-blue-600/10",
+        gradient: "from-sky-500 to-blue-600/5",
         liveDemo: null
     },
     "PRF-SalarySystem": {
         title: "Salary System",
         description: "Employee salary calculator",
         icon: "💰",
-        gradient: "from-emerald-500/30 to-green-600/10",
+        gradient: "from-emerald-500 to-green-600/5",
         liveDemo: null
     },
     "PRF_BurgerShop": {
         title: "Burger Shop",
         description: "Java + OOP restaurant system",
         icon: "🍔",
-        gradient: "from-orange-500/30 to-amber-600/10",
+        gradient: "from-orange-500 to-amber-600/5",
         liveDemo: null
     },
     "iFrendContact": {
         title: "Contact Manager",
         description: "Java + OOP contacts",
         icon: "📇",
-        gradient: "from-blue-500/30 to-indigo-600/10",
+        gradient: "from-blue-500 to-indigo-600/5",
         liveDemo: null
     },
     "PRF-BillPrint": {
         title: "Bill Print",
         description: "Java bill generator",
         icon: "🧾",
-        gradient: "from-green-500/30 to-teal-600/10",
+        gradient: "from-green-500 to-teal-600/5",
         liveDemo: null
     },
     "Number_gessing_game": {
         title: "Number Guessing",
         description: "Interactive JS game",
         icon: "🎯",
-        gradient: "from-cyan-500/25 to-blue-600/15",
+        gradient: "from-cyan-500 to-blue-600/5",
         liveDemo: "https://naseeha-zeenath.github.io/Number_gessing_game/"
     },
     "Chat_Bot": {
         title: "Chat Bot",
         description: "Simple chatbot interface",
         icon: "🤖",
-        gradient: "from-purple-500/30 to-violet-600/10",
+        gradient: "from-purple-500 to-violet-600/5",
         liveDemo: "https://naseeha-zeenath.github.io/Chat_Bot/"
     }
 };
@@ -69,12 +69,12 @@ const projectOrder = [
 
 const desktopPositions = [
     { z: 10,  x: "-400px" },
-    { z: 20,  x: "-250px" },
-    { z: 30,  x: "-100px" },
-    { z: 40,  x: "50px" },
-    { z: 50,  x: "200px" },
-    { z: 60,  x: "350px" },
-    { z: 70,  x: "500px" }
+    { z: 15,  x: "-250px" },
+    { z: 20,  x: "-100px" },
+    { z: 25,  x: "50px" },
+    { z: 30,  x: "200px" },
+    { z: 35,  x: "350px" },
+    { z: 40,  x: "500px" }
 ];
 
 // ========== 1. Update Counters ==========
@@ -150,7 +150,7 @@ function createDesktopCard(data, htmlUrl, pos) {
     : `<span class="rounded-3xl p-2 text-sm invisible">Live Demo</span>`;
     return `
     <div class="project-card absolute z-[${pos.z}] translate-x-[${pos.x}] transition-all duration-300 ease-out
-                hover:z-[100] hover:-translate-y-8 hover:scale-125 cursor-pointer"
+                hover:z-[40] hover:-translate-y-8 hover:scale-125 cursor-pointer"
          onclick="openModal('${data.title}', '${data.description}', '${htmlUrl}')">
         <div class="w-60 overflow-hidden rounded-2xl border-2 border-white/20 bg-slate-900 shadow-xl
                     transition-all duration-300 hover:border-cyan-400/80

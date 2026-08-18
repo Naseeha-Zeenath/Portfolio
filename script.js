@@ -138,7 +138,7 @@ const techObserver = new IntersectionObserver(
                 techItems.forEach((item, index) => {
                     setTimeout(() => {
                         item.classList.add("show");
-                    }, index * 150); // 150ms delay between each span
+                    }, index * 100); // 150ms delay between each span
                 });
             } else {
                 techItems.forEach((item) => {
@@ -235,3 +235,41 @@ if (themeToggle) {
 
 
 
+// ========== SCROLLSPY ==========
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-link");
+
+function updateActiveLink() {
+  let current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.offsetHeight;
+
+    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("data-section") === current) {
+      link.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", updateActiveLink);
+window.addEventListener("load", updateActiveLink);
+
+
+// ========== CURSOR GLOW (Default cursor remains visible) ==========
+
+const glow = document.createElement("div");
+glow.classList.add("cursor-glow");
+document.body.appendChild(glow);
+
+document.addEventListener("mousemove", (e) => {
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+});

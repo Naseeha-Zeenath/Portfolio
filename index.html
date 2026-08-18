@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="style.css">
     <title>Naseeha-Zeenath</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
 
 </head>
 
@@ -18,55 +20,64 @@
 
 
     <header>
-       <nav class="sticky top-0 left-0 z-50 w-full py-4 backdrop-blur-md nav-bar">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-4">
+        <nav id="mainNav" class="fixed top-0 left-0 z-[9999] w-full py-4 backdrop-blur-md nav-bar transition-all duration-300">
+            <div class="mx-auto flex max-w-6xl items-center justify-between px-4">
 
-        <!-- Desktop Menu -->
-        <ul class="hidden items-center gap-8 text-lg font-medium md:flex md:gap-10 lg:gap-12 nav-links">
-            <li><a href="#home" class="px-3 py-2 transition-all duration-300 rounded-lg hover:underline">Home</a></li>
-            <li><a href="#about" class="px-3 py-2 transition-all duration-300 rounded-lg hover:underline">About</a></li>
-            <li><a href="#skills" class="px-3 py-2 transition-all duration-300 rounded-lg hover:underline">Skills</a></li>
-            <li><a href="#projects" class="px-3 py-2 transition-all duration-300 rounded-lg hover:underline">Projects</a></li>
-            <li><a href="#contact" class="px-3 py-2 transition-all duration-300 rounded-lg hover:underline">Contact</a></li>
-        </ul>
+                <!-- Desktop Menu -->
+                <ul class="hidden items-center gap-8 text-lg font-medium md:flex md:gap-10 lg:gap-12 nav-links">
+                    <li><a href="#home"
+                            class="px-3 py-2 transition-all duration-300 rounded-lg hover:underline">Home</a></li>
+                    <li><a href="#about"
+                            class="px-3 py-2 transition-all duration-300 rounded-lg hover:underline">About</a></li>
+                    <li><a href="#skills"
+                            class="px-3 py-2 transition-all duration-300 rounded-lg hover:underline">Skills</a></li>
+                    <li><a href="#projects"
+                            class="px-3 py-2 transition-all duration-300 rounded-lg hover:underline">Projects</a></li>
+                    <li><a href="#contact"
+                            class="px-3 py-2 transition-all duration-300 rounded-lg hover:underline">Contact</a></li>
+                </ul>
 
-        <div class="flex items-center gap-3">
-            <!-- Theme Toggle Button -->
-            <button id="themeToggle" type="button" class="theme-btn rounded-lg p-2" aria-label="Toggle dark/light mode">
-                <svg id="iconSun" class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-                <svg id="iconMoon" class="h-5 w-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-            </button>
+                <div class="flex items-center gap-3">
+                    <!-- Theme Toggle Button -->
+                    <button id="themeToggle" type="button" class="theme-btn rounded-lg p-2"
+                        aria-label="Toggle dark/light mode">
+                        <svg id="iconSun" class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg id="iconMoon" class="h-5 w-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
 
-            <!-- Mobile Hamburger -->
-            <button id="menuBtn" type="button" class="rounded-lg p-2 md:hidden menu-btn" aria-label="Open menu"
-                aria-expanded="false" aria-controls="mobileMenu">
-                <svg id="menuIconOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                <svg id="menuIconClose" class="hidden h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-        </div>
-    </div>
+                    <!-- Mobile Hamburger -->
+                    <button id="menuBtn" type="button" class="rounded-lg p-2 md:hidden menu-btn" aria-label="Open menu"
+                        aria-expanded="false" aria-controls="mobileMenu">
+                        <svg id="menuIconOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="menuIconClose" class="hidden h-6 w-6" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
 
-    <!-- Mobile Menu Panel -->
-    <div id="mobileMenu" class="hidden border-t md:hidden mobile-menu">
-        <ul class="flex flex-col gap-1 px-4 py-3 text-base font-medium">
-            <li><a href="#home" class="mobile-link block rounded-lg px-3 py-2">Home</a></li>
-            <li><a href="#about" class="mobile-link block rounded-lg px-3 py-2">About</a></li>
-            <li><a href="#skills" class="mobile-link block rounded-lg px-3 py-2">Skills</a></li>
-            <li><a href="#projects" class="mobile-link block rounded-lg px-3 py-2">Projects</a></li>
-            <li><a href="#contact" class="mobile-link block rounded-lg px-3 py-2">Contact</a></li>
-        </ul>
-    </div>
-</nav>
+            <!-- Mobile Menu Panel -->
+            <div id="mobileMenu" class="hidden border-t md:hidden mobile-menu">
+                <ul class="flex flex-col gap-1 px-4 py-3 text-base font-medium">
+                    <li><a href="#home" class="mobile-link block rounded-lg px-3 py-2">Home</a></li>
+                    <li><a href="#about" class="mobile-link block rounded-lg px-3 py-2">About</a></li>
+                    <li><a href="#skills" class="mobile-link block rounded-lg px-3 py-2">Skills</a></li>
+                    <li><a href="#projects" class="mobile-link block rounded-lg px-3 py-2">Projects</a></li>
+                    <li><a href="#contact" class="mobile-link block rounded-lg px-3 py-2">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
 
@@ -450,16 +461,16 @@
                     </div>
                 </div>
 
-            
-   <!-- ========== MOBILE / TABLET: Responsive Grid ========== -->
-<div class="grid gap-5 sm:grid-cols-2 lg:hidden">
-    <!-- Cards will be injected here by JavaScript -->
-</div>
 
-            <!-- ========== DESKTOP (lg+): Stacked design ========== -->
-<div class="relative mt-12 hidden items-center justify-center lg:flex" style="min-height: 320px;">
-    <!-- Cards will be injected here by JavaScript -->
-</div>
+                <!-- ========== MOBILE / TABLET: Responsive Grid ========== -->
+                <div class="grid gap-5 sm:grid-cols-2 lg:hidden">
+                    <!-- Cards will be injected here by JavaScript -->
+                </div>
+
+                <!-- ========== DESKTOP (lg+): Stacked design ========== -->
+                <div class="relative mt-12 hidden items-center justify-center lg:flex" style="min-height: 320px;">
+                    <!-- Cards will be injected here by JavaScript -->
+                </div>
             </div>
         </section>
 
@@ -506,7 +517,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 
 
-    
+
 
 
 

@@ -116,11 +116,11 @@ document.getElementById("projectModal").onclick = function (event) {
 
 // ========== 3. Create Mobile Card ==========
 function createMobileCard(data, htmlUrl) {
-    const liveDemoHtml = data.liveDemo
-        ? `<a href="${data.liveDemo}" target="_blank" rel="noopener"
-               class="text-sm text-emerald-400 hover:underline"
-               onclick="event.stopPropagation()">Live Demo</a>`
-        : "";
+const liveDemoHtml = data.liveDemo
+    ? `<a href="${data.liveDemo}" target="_blank" rel="noopener"
+           class="text-sm text-emerald-400 hover:underline"
+           onclick="event.stopPropagation()">Live Demo</a>`
+    : `<span class="text-sm invisible">Live Demo</span>`;
 
     return `
     <article class="project-card overflow-hidden rounded-2xl border-2 border-white/20 bg-slate-900 shadow-xl transition-all duration-300 hover:border-cyan-400/80 cursor-pointer"
@@ -143,12 +143,11 @@ function createMobileCard(data, htmlUrl) {
 
 // ========== 4. Create Desktop Card ==========
 function createDesktopCard(data, htmlUrl, pos) {
-    const liveDemoHtml = data.liveDemo
-        ? `<a href="${data.liveDemo}" target="_blank" rel="noopener"
-               class="rounded-3xl p-2 text-sm font-medium text-emerald-400 hover:border-t hover:border-b hover:text-emerald-300"
-               onclick="event.stopPropagation()">Live Demo</a>`
-        : "";
-
+   const liveDemoHtml = data.liveDemo
+    ? `<a href="${data.liveDemo}" target="_blank" rel="noopener"
+           class="rounded-3xl p-2 text-sm font-medium text-emerald-400 hover:border-t hover:border-b hover:text-emerald-300"
+           onclick="event.stopPropagation()">Live Demo</a>`
+    : `<span class="rounded-3xl p-2 text-sm invisible">Live Demo</span>`;
     return `
     <div class="project-card absolute z-[${pos.z}] translate-x-[${pos.x}] transition-all duration-300 ease-out
                 hover:z-[100] hover:-translate-y-8 hover:scale-125 cursor-pointer"

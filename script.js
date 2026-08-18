@@ -166,7 +166,72 @@ if (yearEl) {
 }
 
 
+// ========== MOBILE MENU (Hamburger) ==========
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const menuIconOpen = document.getElementById("menuIconOpen");
+const menuIconClose = document.getElementById("menuIconClose");
 
+if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+        const isOpen = !mobileMenu.classList.contains("hidden");
+
+        if (isOpen) {
+            mobileMenu.classList.add("hidden");
+            menuIconOpen.classList.remove("hidden");
+            menuIconClose.classList.add("hidden");
+            menuBtn.setAttribute("aria-expanded", "false");
+        } else {
+            mobileMenu.classList.remove("hidden");
+            menuIconOpen.classList.add("hidden");
+            menuIconClose.classList.remove("hidden");
+            menuBtn.setAttribute("aria-expanded", "true");
+        }
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll(".mobile-link").forEach((link) => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            menuIconOpen.classList.remove("hidden");
+            menuIconClose.classList.add("hidden");
+            menuBtn.setAttribute("aria-expanded", "false");
+        });
+    });
+}
+
+
+// ========== DARK / LIGHT THEME TOGGLE ==========
+const themeToggle = document.getElementById("themeToggle");
+const iconSun = document.getElementById("iconSun");
+const iconMoon = document.getElementById("iconMoon");
+const html = document.documentElement;
+
+function applyTheme(theme) {
+    if (theme === "light") {
+        html.classList.add("light");
+        if (iconSun) iconSun.classList.add("hidden");
+        if (iconMoon) iconMoon.classList.remove("hidden");
+    } else {
+        html.classList.remove("light");
+        if (iconSun) iconSun.classList.remove("hidden");
+        if (iconMoon) iconMoon.classList.add("hidden");
+    }
+}
+
+// Load saved theme (default = dark)
+const savedTheme = localStorage.getItem("theme") || "dark";
+applyTheme(savedTheme);
+
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        const isLight = html.classList.contains("light");
+        const newTheme = isLight ? "dark" : "light";
+
+        applyTheme(newTheme);
+        localStorage.setItem("theme", newTheme);
+    });
+}
 
 
 

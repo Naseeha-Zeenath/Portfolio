@@ -68,28 +68,7 @@ window.addEventListener("scroll", () => {
     `;
 });
 
-// ==========  SCROLL REVEAL ==========
-const revealElements = document.querySelectorAll(
-    ".reveal, .reveal-stagger, .project-card-anim"
-);
 
-const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-            } else {
-                entry.target.classList.remove("active"); // reverse on scroll up
-            }
-        });
-    },
-    {
-        threshold: 0.5,
-        rootMargin: "0px 0px -50px 0px",
-    }
-);
-
-revealElements.forEach((el) => observer.observe(el));
 
 
 // ========== COUNTERS ==========
@@ -235,32 +214,7 @@ if (themeToggle) {
 
 
 
-// ========== SCROLLSPY ==========
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-link");
 
-function updateActiveLink() {
-  let current = "";
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 120;
-    const sectionHeight = section.offsetHeight;
-
-    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("data-section") === current) {
-      link.classList.add("active");
-    }
-  });
-}
-
-window.addEventListener("scroll", updateActiveLink);
-window.addEventListener("load", updateActiveLink);
 
 
 // ========== CURSOR GLOW (Default cursor remains visible) ==========

@@ -126,60 +126,7 @@ counters.forEach((c) => counterObserver.observe(c));
 
 
 
-// ========== PROJECT CARDS - ONE BY ONE ROTATE ANIMATION ==========
-const projectCards = document.querySelectorAll(".project-card");
 
-const projectObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                // Animate cards one by one
-                projectCards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.classList.add("show");
-                    }, index * 100); // delay between each card
-                });
-            } else {
-                // Reverse animation when scrolling back up
-                projectCards.forEach((card) => {
-                    card.classList.remove("show");
-                });
-            }
-        });
-    },
-    {
-        threshold: 0.30,
-        rootMargin: "0px 0px -80px 0px"
-    }
-);
-
-const projectsSection = document.querySelector("#projects");
-if (projectsSection) {
-    projectObserver.observe(projectsSection);
-}
-
-// ========== MOBILE MENU ==========
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-const menuIconOpen = document.getElementById("menuIconOpen");
-const menuIconClose = document.getElementById("menuIconClose");
-
-menuBtn?.addEventListener("click", () => {
-    const isOpen = !mobileMenu.classList.contains("hidden");
-    mobileMenu.classList.toggle("hidden");
-    menuIconOpen?.classList.toggle("hidden", !isOpen);
-    menuIconClose?.classList.toggle("hidden", isOpen);
-    menuBtn.setAttribute("aria-expanded", String(!isOpen));
-});
-
-document.querySelectorAll(".mobile-link").forEach((link) => {
-    link.addEventListener("click", () => {
-        mobileMenu?.classList.add("hidden");
-        menuIconOpen?.classList.remove("hidden");
-        menuIconClose?.classList.add("hidden");
-        menuBtn?.setAttribute("aria-expanded", "false");
-    });
-});
 
 // ========== CORE TECHNOLOGIES - One by One Animation ==========
 const techItems = document.querySelectorAll(".tech-item");
